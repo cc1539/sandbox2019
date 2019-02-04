@@ -1,92 +1,35 @@
 <!DOCTYPE html>
 <html>
 	<head>
+	
 		<title>SandBox 2019</title>
-		<script type="text/javascript">
-			
-			function forClass(class_name,func) {
-				var elems = document.getElementsByClassName(class_name);
-				for(var i=0,l=elems.length;i<l;i++) {
-					func(elems[i]);
-				}
-			}
-			
-			function toggleCollapsible(source) {
-				var target = source.nextElementSibling;
-				target.style.display = (target.style.display==="block"?"none":"block");
-			}
-			
-			window.onload = function() {
-				forClass("category",function(elem){
-					var html = elem.innerHTML;
-					elem.innerHTML = html.substring(0,3)+'<span style="font-size:12px;">'+html.substring(3)+"</span>";
-				});
-				forClass("collapsible",function(elem){
-					elem.onclick = new Function('toggleCollapsible(this)');
-				});
-				{
-					var title = document.getElementById("title");
-					var html = title.innerHTML;
-					var span_head = '<span style="font-size:24px;">';
-					{
-						var title_text = title.innerHTML;
-						var new_title_text = '';
-						var embiggen = true;
-						for(var i=0;i<title_text.length;i++) {
-							var c = title_text.charAt(i);
-							if(embiggen) {
-								new_title_text = new_title_text+span_head;
-							}
-							new_title_text = new_title_text+c;
-							if(embiggen) {
-								new_title_text = new_title_text+'</span>';
-							}
-							embiggen = (c==' ');
-						}
-						title.innerHTML = new_title_text;
-					}
-					/*
-					title.innerHTML =
-						span_head+html.charAt(0)+"</span>"+html.substring(1,12)+
-						span_head+html.charAt(12)+"</span>"+html.substring(13,20)+
-						span_head+html.charAt(20)+"</span>"+html.substring(21);
-					*/
-				}
-			}
-			
-		</script>
-		<style>
-			hr {
-				border: 0;
-				height: 1px;
-				background: #DDD;
-			}
-			.desc {
-				line-height: 1.6;
-			}
-			.collapsible {
-				user-select: none;
-			}
-			.collapsible+* {
-				display: none;
-			}
-		</style>
+		
+		<script type="text/javascript" src="setup.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<meta charset="utf-8" />
+		
 	</head>
 	<body>
+		
+		<script src="boxfield.js"></script>
+		
 		<div style="width:500px;margin:auto;">
 		
 			<p style="text-align:center;font-size:16px;" id="title">christopher cheng's sandbox</p>
 			
 			<div style="font-family: segoe ui;">
 				
-				<p class="collapsible category" title="short description of the story">+ SUMMARY</p>
+				<p class="collapsible category start_visible" title="Short description of this site">+ SUMMARY</p>
 				<div>
 					<div style="font-size:12px;">
 						<p>For now, a few of my projects can be found on <a href="http://github.com/Metashian">my other github page</a>. I plan to eventually migrate those projects and also post some of my other yet-to-be-published projects here  onto this page.</p>
 					</div>
 				</div>
 				
-				<p class="collapsible category" title="list of characters">+ PROJECTS</p>
+				<p class="collapsible category" title="List of published projects">+ PROJECTS</p>
 				<div style="line-height:.5;margin-left:30px;font-size:12px;">
 				
 					<p class="collapsible">+ Project 1</p>
@@ -115,7 +58,7 @@
 					
 				</div>
 				
-				<p class="collapsible category" title="no-fringes rundown of what happens in the story">+ TIMELINE</p>
+				<p class="collapsible category" title="How I met ur mum lmao">+ TIMELINE</p>
 				<div>
 					<div style="font-size:12px;">
 						<p>Here goes information.</p>

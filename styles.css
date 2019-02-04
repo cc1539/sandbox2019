@@ -1,0 +1,31 @@
+
+hr {
+	border: 0;
+	height: 1px;
+	background: #DDD;
+}
+
+.desc {
+	line-height: 1.6;
+}
+
+.collapsible {
+	user-select: none;
+}
+
+.collapsible+* {
+	display: none;
+}
+
+.collapsible.start_visible+* {
+	display: block;
+}
+
+canvas {
+	z-index: -1;
+	display: inline-block;
+	pointer-events: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
