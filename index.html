@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SandBox 2019</title>
+		<script type="text/javascript">
+			
+			function forClass(class_name,func) {
+				var elems = document.getElementsByClassName(class_name);
+				for(var i=0,l=elems.length;i<l;i++) {
+					func(elems[i]);
+				}
+			}
+			
+			function toggleCollapsible(source) {
+				var target = source.nextElementSibling;
+				target.style.display = (target.style.display==="block"?"none":"block");
+			}
+			
+			window.onload = function() {
+				forClass("category",function(elem){
+					var html = elem.innerHTML;
+					elem.innerHTML = html.substring(0,3)+'<span style="font-size:12px;">'+html.substring(3)+"</span>";
+				});
+				forClass("collapsible",function(elem){
+					elem.onclick = new Function('toggleCollapsible(this)');
+				});
+				{
+					var title = document.getElementById("title");
+					var html = title.innerHTML;
+					var span_head = '<span style="font-size:24px;">';
+					{
+						var title_text = title.innerHTML;
+						var new_title_text = '';
+						var embiggen = true;
+						for(var i=0;i<title_text.length;i++) {
+							var c = title_text.charAt(i);
+							if(embiggen) {
+								new_title_text = new_title_text+span_head;
+							}
+							new_title_text = new_title_text+c;
+							if(embiggen) {
+								new_title_text = new_title_text+'</span>';
+							}
+							embiggen = (c==' ');
+						}
+						title.innerHTML = new_title_text;
+					}
+					/*
+					title.innerHTML =
+						span_head+html.charAt(0)+"</span>"+html.substring(1,12)+
+						span_head+html.charAt(12)+"</span>"+html.substring(13,20)+
+						span_head+html.charAt(20)+"</span>"+html.substring(21);
+					*/
+				}
+			}
+			
+		</script>
+		<style>
+			hr {
+				border: 0;
+				height: 1px;
+				background: #DDD;
+			}
+			.desc {
+				line-height: 1.6;
+			}
+			.collapsible {
+				user-select: none;
+			}
+			.collapsible+* {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="width:500px;margin:auto;">
+		
+			<p style="text-align:center;font-size:16px;" id="title">christopher cheng's sandbox</p>
+			
+			<div style="font-family: segoe ui;">
+				
+				<p class="collapsible category" title="short description of the story">+ SUMMARY</p>
+				<div>
+					<div style="font-size:12px;">
+						<p>For now, a few of my projects can be found on <a href="http://github.com/Metashian">my other github page</a>. I plan to eventually migrate those projects and also post some of my other yet-to-be-published projects here  onto this page.</p>
+					</div>
+				</div>
+				
+				<p class="collapsible category" title="list of characters">+ PROJECTS</p>
+				<div style="line-height:.5;margin-left:30px;font-size:12px;">
+				
+					<p class="collapsible">+ Project 1</p>
+						<div>
+							<hr>
+							
+							<p><b>Description</b></p>
+							<p class="desc">A project description will go here eventually. Refer to the "SUMMARY" at the top of the page for more information.</p><hr>
+							
+							<p><b>Appearance</b></p>
+							<p class="desc">It seems as if there's no project here yet.</p><hr>
+							
+						</div>
+					
+					<p class="collapsible">+ Project 2</p>
+						<div>
+							<hr>
+							
+							<p><b>Description</b></p>
+							<p class="desc">A project description will go here eventually. Refer to the "SUMMARY" at the top of the page for more information.</p><hr>
+							
+							<p><b>Appearance</b></p>
+							<p class="desc">It seems as if there's no project here yet.</p><hr>
+							
+						</div>
+					
+				</div>
+				
+				<p class="collapsible category" title="no-fringes rundown of what happens in the story">+ TIMELINE</p>
+				<div>
+					<div style="font-size:12px;">
+						<p>Here goes information.</p>
+						<hr>
+						<ul style="list-style-type:square;">
+							
+							<style>
+								.spacer {
+									height: 10px;
+								}
+							</style>
+							
+							<b>Prologue</b>
+							<li>Here is some information.</li>
+							<li>More information.</li>
+							
+							<div class="spacer"></div>
+							<b>Chapter 1</b>
+							
+							<li>Here is some information.</li>
+							<li>More information.</li>
+							
+							<div class="spacer"></div>
+							<b>Chapter 2</b>
+							
+							<li>Here is some information.</li>
+							<li>More information.</li>
+							
+						</ul>
+					</div>
+				</div>
+				
+				<p class="collapsible category" title="details that may or may not be important">+ TRIVIA</p>
+				<div>
+					<div style="font-size:12px;">
+						<p>original content™</p>
+						<ul style="list-style-type:square;line-height:20px;">
+							<li>sample text</li>
+							<li>sample text</li>
+							<li>sample text</li>
+							<li>sample text</li>
+							<li>sample text</li>
+							<li>sample text</li>
+							<li>sample text</li>
+							<li>sample text</li>
+							<li>sample text</li>
+							<li>sample text</li>
+							<li>sample text</li>
+							<li>bottom text</li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+		
+		<div style="padding-bottom:140px;"></div>
+		
+		<div style="width:300px;position:fixed;left:10px;bottom:10px;">
+			<img src="assets/evilnet.gif">
+			<img src="assets/geocities_area_51.gif">
+			<img src="assets/hatemac.jpg">
+			<img src="assets/members-choice.gif">
+			<img src="assets/neocities_button.gif">
+			<img src="assets/poweredbymac.gif">
+			<img src="assets/reality.gif">
+		</div>
+		<img style="position:fixed;bottom:0;center:0;left:50%;margin-left:-258px;" src="assets/under-construction.gif">
+		
+	</body>
+</html>
